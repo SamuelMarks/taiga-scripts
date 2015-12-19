@@ -5,6 +5,6 @@ source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
 
 function mkvirtualenv-if-needed {
     for envname in $@; do
-        $(lsvirtualenv | grep -q "$envname") || mkvirtualenv "$envname" -p /usr/bin/python3.4 && add2virtualenv /usr/lib/python3/dist-packages/lxml
+        $(lsvirtualenv | grep -q "$envname") || mkvirtualenv "$envname" -p /usr/bin/python3.4 && add2virtualenv /usr/lib/python3/dist-packages/lxml && ln -s /usr/lib/python3/dist-packages/lxml ~/.virtualenvs/taiga/lib/python3.4/site-packages/
     done
 }
